@@ -31,7 +31,7 @@ int ** Readinput_(char *filename, char *dictFileName, int *seqLabels, int *seqLe
         int row = 0; //counts rows of the output and line number of the sequence file
         output =  (int **) malloc(maxNumStr * sizeof(int *));
 
-        while (fgets(line, STRMAXLEN, inpfile)) {
+        while (fgets(line, STRMAXLEN, inpfile) && row < maxNumStr) {
             linetemp = (char *) malloc(STRMAXLEN * sizeof(char *));
             strcpy(linetemp, line);
             if (isLabel) {
